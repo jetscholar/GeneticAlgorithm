@@ -7,6 +7,14 @@ from random import randint, randrange
 Genome = List[int]
 Population = List[Genome]
 FitnessFunc = Callable[[Genome], int]
+
+# Main Loop functions
+PopulateFunc = Callable[[], Population]
+SelectionFunc = Callable[[Population, FitnessFunc], Tuple[Genome, Genome]]
+CrossoverFunc = Callable[[Genome, Genome], Tuple[Genome, Genome]]
+MutationFunc = Callable[[Genome], Genome]
+
+
 Thing = namedtuple("Thing", ["name", "value", "weight"])
 
 things = [
